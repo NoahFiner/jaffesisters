@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300|Quicksand:400,700');
 
 * {
   margin: 0;
   height: 0;
-  font-family: 'Montserrat', 'HelveticaNeue', helvetica, Arial, sans-serif;
+  font-family: 'Quicksand', 'HelveticaNeue', helvetica, Arial, sans-serif;
   font-weight: 300;
 }
 
 body {
   background-color: #333;
+  overflow-x: hidden;
 }
 
 .full-relative {
@@ -17,13 +18,27 @@ body {
   position: relative;
 }
 
-#header-fixed {
+.header-fixed {
   z-index: 10;
   background-color: #333;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   height: 6em;
   width: 100vw;
   position: fixed;
+}
+
+#home-header {
+  box-shadow: none;
+  height: 25em;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
+  background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+}
+
+#home-header > .full-relative {
+  height: 6em;
 }
 
 #header-logo-left {
@@ -163,6 +178,103 @@ body {
   line-height: 12.5rem;
   letter-spacing: 0.25em;
   vertical-align: middle;
+}
+
+#home-carousel-outer {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+}
+
+#home-carousel-mask {
+  z-index: 4345;
+  pointer-events: none;
+}
+
+.loading {
+  position: absolute;
+  top: 85%;
+  left: 2.5%;
+  font-size: 4vw;
+  font-family: "Montserrat", "Roboto", helvetica, Arial, sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: #aaa;
+}
+
+.slide {
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  position: absolute;
+  background-position: center center;
+  background-size: cover;
+  transition: opacity 1.5s linear 0.5s;
+  -webkit-transition: opacity 1.5s linear 0.5s;
+}
+
+.slide.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.info {
+  pointer-events: auto;
+  background-color: #9a5cd9;
+  height: auto;
+  width: auto;
+  position: absolute;
+  bottom: 2em;
+  left: 2em;
+  overflow: hidden;
+}
+
+.info > h1 {
+  text-decoration: none;
+  font-family: "Montserrat", "Roboto", helvetica, Arial, sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 2em;
+  width: auto;
+  max-width: 10em;
+  margin: 1em 1em 0.25em 1em;
+  height: auto;
+  color: #fff;
+  text-align: left;
+}
+
+.info > p {
+  display: block;
+  margin: 1em 2em 2em 2em;
+  color: #fff;
+  width: auto;
+  height: auto;
+  max-width: 20em;
+}
+
+.info > a {
+  height: auto;
+  width: auto;
+  color: #9a5cd9;
+  background-color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-family: "Montserrat", "Roboto", helvetica, Arial, sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 1em;
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+  display: inline-block;
+  margin: 4em 2em 2em 2em;
+  transition: background-color 0.25s;
+  -webkit-transition: background-color 0.25s;
+}
+
+.info > a:hover {
+  background-color: #fff;
 }
 
 #content {

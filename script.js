@@ -1,0 +1,62 @@
+var changeTimeout, changeInterval;
+var currentSlide = 0;
+
+var Slide = function(num, img, title, text, link) {
+  this.num = num;
+  this.text = text;
+  this.title = title;
+  this.link = link;
+  this.img = img;
+  this.height = 100;
+  this.init = function() {
+    $("#home-carousel-slides").append("<div class='slide hidden' id='slide"+this.num+"' style='background-image: url(\""+this.img+"\")'></div>");
+    $("#home-carousel-mask").append("<div class='info' id='info"+this.num+"'> " +
+      "<h1>"+this.title+"</h1>" +
+      "<p>"+this.text+"</p>" +
+      "<a href="+this.link+">LEARN MORE</a>" +
+    "</div>");
+    this.height = $("#info"+this.num).height();
+    $("#info"+this.num).remove();
+    $(".info").css("height", "10px");
+    $(".info").css("transition", "height 0.5s");
+    $(".info").css("-webkit-transition", "height 0.5s");
+  }
+  this.activate = function() {
+    clearTimeout(changeTimeout);
+    $(".info").css("height", "10px");
+    $(".slide:not(#slide"+this.num+")").addClass("hidden");
+    $("#slide"+this.num).removeClass("hidden");
+    var that = this;
+    changeTimeout = setTimeout(function() {
+      $('.info').css("height", that.height+"px");
+      $(".info").html("");
+      $(".info").append("<h1>"+that.title+"</h1>" +
+                        "<p>"+that.text+"</p>" +
+                        "<a href="+that.link+">LEARN MORE</a>");
+    }, 1000);
+  }
+}
+
+var slides = [
+  new Slide(0, 'img/4.jpg', 'JAFFE SISTERS HOT SAUCE', 'Formerly known as Tuition Hot Sauce, Jaffe Sisters Hot Sauce is a home-built hot sauce company managed by Anna and Naomi Jaffe.', 'sauces.html'),
+  new Slide(1, 'img/2-cropped.jpg', 'LOREM IPSUM', 'In publishing and graphic design, lorem ipsum is a filler text commonly used to demonstrate the graphic elements of a document or visual presentation.', 'about.html'),
+  new Slide(2, 'img/1.jpg', 'BACKYARD INGREDIENTS', 'Literally! All peppers in our sauces are grown in our backyard. You can\'t get fresher than that!', 'about.html'),
+  new Slide(3, 'img/3.jpg', 'IPSUM LOREM LEE', 'Lorem ipsum dolor sit amet, vis et delectus dignissim expetendis, sea rebum gloriatur ad. Graeci splendide necessitatibus vel no.', 'about.html')
+];
+
+var nextSlide = function() {
+  currentSlide++;
+  if(currentSlide >= slides.length) {
+    currentSlide = 0;
+  }
+  slides[currentSlide].activate();
+}
+
+changeInterval = setInterval(nextSlide, 10000);
+
+$(document).ready(function() {
+  for(var i = 0; i < slides.length; i++) {
+    slides[i].init();
+  }
+  setTimeout(function() {slides[0].activate(); $(".loading").fadeOut(500)}, 250);
+});
