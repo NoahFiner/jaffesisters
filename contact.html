@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+</head>
+<body>
+  <div id="everything-outer">
+    <div class="header-fixed">
+      <div class="full-relative">
+        <a href="index.html" id="header-logo-left">
+          <img src="peppers.png" class="header-logo-icon"/>
+          <img src="text.png" class="header-logo-text"/>
+        </a>
+        <div id="header-logo-right">
+          <a class="header-link cool-hover" href="about.html">about</a>
+          <a class="header-link cool-hover">hot sauces</a>
+          <a class="header-link cool-hover">blog</a>
+          <a class="header-link cool-hover">contact</a>
+        </div>
+      </div>
+    </div>
+    <div id="header-normal" style="background-image: url('img/2.jpg')">
+      <div id="header-mask">
+        <h1 id="header-text">contact us</h1>
+        <div id="cool-divs">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="section">
+        <p style="text-align: center">Contact us for hot suace orders, questions, or anything else! We will typically respond within 3-5 business days.</p>
+      </div>
+      <form id="contact-upper">
+        <h3>EMAIL TYPE</h3>
+        <select name="email-type">
+          <option value="order">Order</option>
+          <option value="general">General inquiry</option>
+          <option value="question">Question</option>
+        </select>
+        <br>
+        <div class="fancy-hr">
+          <div class="fancy-hr-line"></div>
+          <div class="fancy-hr-middle"></div>
+        </div>
+        <br>
+        <div id="contact-left">
+          <h3>NAME</h3>
+          <input type="text" name="name"></input>
+          <h3>YOUR EMAIL</h3>
+          <input type="text" name="email"></input>
+        </div>
+        <div id="contact-right">
+          <div id="order-outer" class="form-lower">
+            <h3>ORDER INFORMATION</h3>
+            <div id="order-info">
+              <p>I am ordering </p>
+              <input type="number" style="width: 2em;" min="0" max="20" name="order-number" value="1"></input>
+              <p> bottle(s) of </p>
+              <select name="order-flavor">
+                <option value="0">Habanero Hypernova</option>
+                <option value="1">Persimmon the Devil</option>
+                <option value="2">Sweetly Sinister</option>
+                <option value="3">Tongue Thai'd</option>
+                <option value="4">Psycho Jalapeno</option>
+              </select>
+              <br>
+              <p>I would like my hot sauce by </p>
+              <input type="text" name="order-date" placeholder="enter a date or N/A."></input>
+              <p>.</p>
+              <textarea name="order-body" style="margin-top: 2em" placeholder="Add any additional instructions or questions here."></textarea>
+            </div>
+          </div>
+          <div id="general-outer" class="form-lower hidden">
+            <h3>SUBJECT</h3>
+            <input type="text" name="subject"></input>
+            <h3>CONTENT</h3>
+            <textarea name="body" placeholder="Type your email here..."></textarea>
+          </div>
+          <div id="question-outer" class="form-lower hidden">
+            <h3>SUBJECT</h3>
+            <input type="text" name="subject"></input>
+            <h3>CONTENT</h3>
+            <textarea name="body" placeholder="Type your email here..."></textarea>
+          </div>
+        </div>
+        <br>
+        <p style="margin-top: 3em">Make sure that all information is correct before sending! If your email address is inaccurate, you will not receive a response.</p>
+        <button id="email-submit">SEND</button>
+      </form>
+    </div>
+    <div id="footer" style="margin-top: 15em">
+      <a id="footer-logo" href="index.html">
+        <img src="logo-white.png" />
+      </a>
+      <div id="footer-links">
+        <a class="footer-link" href="about.html">about</a>
+        <a class="footer-link">hot sauces</a>
+        <a class="footer-link">blog</a>
+        <a class="footer-link">contact</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

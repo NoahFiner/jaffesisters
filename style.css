@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300|Quicksand:400,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,700|Quicksand:400,700');
 
 * {
   margin: 0;
@@ -275,6 +275,162 @@ body {
 
 .info > a:hover {
   background-color: #fff;
+}
+
+#contact-upper {
+  width: 100%;
+  height: 40em;
+}
+
+#contact-upper > div:not(.fancy-hr) {
+  width: 49.5%;
+  display: inline-block;
+  margin-top: -3em;
+  vertical-align: top;
+  height: auto;
+}
+
+#contact-upper h3 {
+  font-family: "Montserrat", "Roboto", helvetica, Arial, sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 1.5em;
+  margin: 2em 0 0.25em 0;
+  width: auto;
+  height: auto;
+  display: block;
+  width: 100%;
+  color: #9a5cd9;
+}
+
+input {
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  border-bottom: 2px solid #9a5cd9;
+  height: auto;
+  font-size: 1em;
+  padding: 0.25em;
+  color: #999;
+  font-family: "Montserrat", "Roboto", helvetica, Arial, sans-serif;
+  font-weight: 700;
+  display: block;
+  width: 20em;
+  transition: width 0.25s;
+  -webkit-transition: width 0.25s;
+}
+
+input:hover {
+  width: 22em;
+}
+
+input:focus {
+  width: 25em;
+}
+
+textarea {
+  outline: 0;
+  background-color: transparent;
+  border: 2px solid #9a5cd9;
+  height: 10em;
+  font-size: 1em;
+  padding: 0.25em;
+  color: #999;
+  font-family: "Montserrat", "Roboto", helvetica, Arial, sans-serif;
+  font-weight: 700;
+  display: block;
+  width: 90%;
+}
+
+select {
+  outline: 0;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 2px solid #9a5cd9;
+  background-color: transparent;
+  width: 20em;
+  height: 2em;
+  font-size: 1em;
+  padding: 0.25em;
+  color: #999;
+  font-family: "Montserrat", "Roboto", helvetica, Arial, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  /*background: url(http://www.stackoverflow.com/favicon.ico) 96% / 15% no-repeat #eee;*/
+  transition: width 0.25s;
+  -webkit-transition: width 0.25s;
+}
+
+select:hover {
+  width: 22em;
+}
+
+select:active {
+  width: 25em;
+}
+
+.form-lower {
+  position: relative;
+  height: auto;
+  width: 100%;
+  opacity: 1;
+  transition: opacity 0.25s;
+  -webkit-transition: opacity 0.25s;
+}
+
+.form-lower.hidden {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.25s;
+  -webkit-transition: opacity 0.25s;
+}
+
+#order-info {
+  width: 100%;
+  height: auto;
+}
+
+#order-info > * {
+  display: inline-block;
+}
+
+#order-info > input {
+  width: 10em;
+}
+
+#order-info > select {
+  width: 20em;
+}
+
+#email-submit {
+  font-family: "Montserrat", "Roboto", helvetica, Arial, sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 1.5em;
+  margin: 1em 0;
+  padding: 0.25em 0.5em;
+  background-color: #9a5cd9;
+  color: #333;
+  outline: 0;
+  border: 0;
+  position: relative;
+  display: block;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+  transition: color 0.25s;
+  -webkit-transition: color 0.25s;
+}
+
+#email-submit:hover {
+  color: #fff;
 }
 
 #content {

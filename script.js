@@ -1,5 +1,6 @@
-var changeTimeout, changeInterval;
+var changeTimeout, changeInterval, emailChangeTimeout;
 var currentSlide = 0;
+var currentEmail = "order";
 
 var Slide = function(num, img, title, text, link) {
   this.num = num;
@@ -59,4 +60,18 @@ $(document).ready(function() {
     slides[i].init();
   }
   setTimeout(function() {slides[0].activate(); $(".loading").fadeOut(500)}, 250);
+
+  //set constant dimensions to contact-right to avoid weird animations
+
+  $("#contact-right").css("height", $("#contact-right").height()+"px");
+  $("#contact-right, .form-lower").css("width", $("#contact-right").width()+"px");
+
+  $("select[name='email-type']").change(function() {
+    clearTimeout(emailChangeTimeout);
+    currentEmail = $(this).val();
+    $(".form-lower").addClass("hidden");
+    emailChangeTimeout = setTimeout(function() {
+      $("#"+currentEmail+"-outer").removeClass("hidden");
+    }, 500);
+  });
 });
