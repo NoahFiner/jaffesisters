@@ -65,6 +65,13 @@ $(document).ready(function() {
 
   $("#contact-right").css("height", $("#contact-right").height()+"px");
   $("#contact-right, .form-lower").css("width", $("#contact-right").width()+"px");
+  if(window.location.hash) {
+    //hash should be order-1, with the 1 corresponding to the value to set the order flavor to
+    var hash = window.location.hash.substr(1);
+    if(parseInt(hash.split("-")[1])) {
+      $("select[name='order-flavor'] option[value="+hash.split("-")[1]+"]").attr('selected', 'selected');
+    }
+  }
 
   $("select[name='email-type']").change(function() {
     clearTimeout(emailChangeTimeout);
