@@ -2,6 +2,8 @@ var changeTimeout, changeInterval, emailChangeTimeout;
 var currentSlide = 0;
 var currentEmail = "order";
 
+//TODO: add smooth hash scrolling
+
 var Slide = function(num, img, title, text, link) {
   this.num = num;
   this.text = text;
@@ -39,10 +41,11 @@ var Slide = function(num, img, title, text, link) {
 }
 
 var slides = [
-  new Slide(0, 'img/4.jpg', 'JAFFE SISTERS HOT SAUCE', 'Formerly known as Tuition Hot Sauce, Jaffe Sisters Hot Sauce is a home-built hot sauce company managed by Anna and Naomi Jaffe.', 'sauces.html'),
-  new Slide(1, 'img/2-cropped.jpg', 'LOREM IPSUM', 'In publishing and graphic design, lorem ipsum is a filler text commonly used to demonstrate the graphic elements of a document or visual presentation.', 'about.html'),
-  new Slide(2, 'img/1.jpg', 'BACKYARD INGREDIENTS', 'Literally! All peppers in our sauces are grown in our backyard. You can\'t get fresher than that!', 'about.html'),
-  new Slide(3, 'img/3.jpg', 'IPSUM LOREM LEE', 'Lorem ipsum dolor sit amet, vis et delectus dignissim expetendis, sea rebum gloriatur ad. Graeci splendide necessitatibus vel no.', 'about.html')
+  new Slide(0, 'img/4.jpg', 'A SAUCY SELECTION', 'We make high-quality, local, and fresh hot sauce in a variety of spicy flavors!.', 'sauces.html'),
+  new Slide(1, 'img/3.jpg', 'PERFECT PARTNERS', 'As sisters and best friends, the owners of Tuition Hot Sauce make the ultimate business companions.', 'about.html#about-header'),
+  new Slide(2, 'img/1.jpg', 'BACKYARD INGREDIENTS', 'Literally! All peppers in hot sauces are grown in our backyard. You can\'t get fresher than that!', 'about.html#ingredients-header'),
+  new Slide(3, 'img/2-cropped.jpg', 'EARNING FOR EDUCATION', 'All earnings from selling our hot sauce goes towards our college savings.', 'about.html#education-header'),
+  new Slide(4, 'img/5.jpg', 'A HOMEMADE BUSINESS', 'The hot sauce flavors, bottles, and labels are all designed and original to our business.', 'about.html#business-header')
 ];
 
 var nextSlide = function() {

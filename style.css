@@ -57,9 +57,9 @@ body {
 }
 
 .header-logo-text {
-  height: 55%;
+  height: 40%;
   width: auto;
-  margin-left: 0.25em;
+  margin-left: 0.35em;
 }
 
 #header-logo-right {
@@ -449,14 +449,15 @@ select:active {
   text-transform: uppercase;
   letter-spacing: 0.25em;
   font-size: 3em;
-  margin: 3em 0 2em 0;
+  margin: 3em 0 -0.5em 0;
   color: #9A5CD9;
+  height: auto;
   display: block;
   text-align: center;
 }
 
 #content > h1:first-child {
-  margin: 1em 0 2em 0;
+  margin: 1em 0 -0.5em 0;
 }
 
 .section {
@@ -475,6 +476,73 @@ select:active {
 
 .align-right {
   text-align: right;
+}
+
+.sauce-section {
+  height: 80vh;
+  background-color: rgb(67, 42, 75);
+}
+
+.sauce {
+  display: block;
+  align-self: flex-end;
+  position: relative;
+  margin: 3em;
+  margin-bottom: 0;
+  height: 80%;
+  width: 30%;
+}
+
+.sauce > img {
+  height: 100%;
+  width: auto;
+}
+
+.sauce-info {
+  margin: 8em 4em 0 4em;
+  align-self: flex-start;
+}
+
+.sauce-info > h2 {
+  text-decoration: none;
+  font-family: "Montserrat", "Roboto", helvetica, Arial, sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 2em;
+  height: auto;
+  color: #fff;
+  text-align: left;
+}
+
+.sauce-info > p {
+  display: block;
+  color: #fff;
+  width: auto;
+  height: auto;
+}
+
+.sauce-info > a {
+  height: auto;
+  width: auto;
+  color: #9a5cd9;
+  background-color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-family: "Montserrat", "Roboto", helvetica, Arial, sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 1em;
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+  display: inline-block;
+  margin: 4em 2em 2em 2em;
+  transition: background-color 0.25s;
+  -webkit-transition: background-color 0.25s;
+}
+
+.sauce-info > a:hover {
+  background-color: #fff;
 }
 
 .content-img {
@@ -597,7 +665,7 @@ p {
 #footer-logo {
   height: 10em;
   width: auto;
-  margin-left: 1em;
+  margin-left: 3em;
 }
 
 #footer-logo > img {
@@ -640,4 +708,30 @@ p {
 
 .footer-link:hover {
   opacity: 1;
+}
+
+@media screen and (max-width: 1000px) {
+  #header-text {
+    font-size: 8vw;
+  }
+  .section {
+    flex-wrap: wrap;
+  }
+  .section:not(.sauce-section) > * {
+    width: 100%;
+  }
+  .section > p {
+    order: 2;
+    text-align: center;
+    width: 90% !important;
+  }
+  .section > .content-img {
+    height: 15em;
+    width: auto;
+    margin: 0 0 4em 0;
+  }
+  .content-img > img {
+    height: 15em;
+    width: auto;
+  }
 }
