@@ -84,4 +84,14 @@ $(document).ready(function() {
       $("#"+currentEmail+"-outer").removeClass("hidden");
     }, 500);
   });
+
+  $("#hamburger-outer").click(function() {
+    $("#hamburger-outer, #header-right").toggleClass("expanded");
+  });
+
+  $(window).scroll(function() {
+    $("#hamburger-outer, #header-right").removeClass("expanded");
+  });
+
+  //TODO: clicking outside of expanded hamburger menu closes it
 });

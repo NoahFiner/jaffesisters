@@ -62,7 +62,7 @@ body {
   margin-left: 0.35em;
 }
 
-#header-logo-right {
+#header-right {
   position: absolute;
   height: 100%;
   right: 0.5em;
@@ -632,8 +632,6 @@ p {
   margin-top: -84%;
 }
 
-
-
 #footer {
   width: 100%;
   height: 15em;
@@ -710,7 +708,110 @@ p {
   opacity: 1;
 }
 
+#hamburger-outer {
+  display: none;
+}
+
 @media screen and (max-width: 1000px) {
+  #header-right {
+    height: auto;
+    max-height: 0px;
+    flex-wrap: wrap;
+    width: 100%;
+    right: 0;
+    overflow: hidden;
+    top: 6rem;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    transition: max-height 0.25s;
+    -webkit-transition: max-height 0.25s;
+  }
+
+  #header-right.expanded {
+    max-height: 24rem;
+  }
+
+  #header-right > .header-link {
+    cursor: pointer;
+    font-size: 2em;
+    height: 6rem;
+    line-height: 6rem;
+    vertical-align: center;
+    text-align: right;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-right: 1em !important;
+    background-color: #333;
+    border-top: 1px solid #444;
+    transition: background-color 0.25s;
+    -webkit-transition: background-color 0.25s;
+  }
+
+  #header-right > .header-link:hover {
+    background-color: #3a3a3a;
+  }
+
+  #hamburger-outer {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    right: 2rem;
+    top: 1rem;
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .burger {
+    height: 2px;
+    width: 80%;
+    left: 10%;
+    position: absolute;
+    background-color: #9A5CD9;
+    transform: translateX(0) rotate(0deg);
+    -webkit-transform: translateX(0) rotate(0deg);
+    transition: transform 0.25s, top 0.25s, left 0.25s;
+    -webkit-transition: transform 0.25s, top 0.25s, left 0.25s;
+  }
+
+  #burger1 {
+    top: 25%;
+    transform-origin: center left;
+  }
+
+  #burger2 {
+    top: 50%;
+    transform-origin: center center;
+  }
+
+  #burger3 {
+    top: 75%;
+    transform: center right;
+  }
+
+  #hamburger-outer:hover > div > #burger1 {
+    transform: translateX(7.5%) rotate(0);
+  }
+  #hamburger-outer:hover > div > #burger2 {
+    transform: translateX(-7.5%) rotate(0);
+  }
+  #hamburger-outer:hover > div > #burger3 {
+    transform: translateX(7.5%) rotate(0);
+  }
+
+  #hamburger-outer.expanded > div > #burger1 {
+    top: 20%;
+    left: 20%;
+    transform: translateX(0) rotate(45deg);
+  }
+  #hamburger-outer.expanded > div > #burger2 {
+    top: 50%;
+    transform: translateX(0) rotate(45deg);
+  }
+  #hamburger-outer.expanded > div > #burger3 {
+    top: 50%;
+    transform: translateX(0) rotate(-45deg);
+  }
+
   #header-text {
     font-size: 8vw;
   }
@@ -733,5 +834,11 @@ p {
   .content-img > img {
     height: 15em;
     width: auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .info {
+    width: 80vw;
   }
 }
