@@ -7,9 +7,13 @@
   font-weight: 300;
 }
 
+/*TODO FIX HORIZONTAL SCROLLING ON MOBILE*/
+
 body {
   background-color: #333;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 .full-relative {
@@ -239,7 +243,7 @@ body {
   font-size: 2em;
   width: auto;
   max-width: 10em;
-  margin: 1em 1em 0.25em 1em;
+  margin: 2rem 2rem 0.5rem 2rem;
   height: auto;
   color: #fff;
   text-align: left;
@@ -310,6 +314,8 @@ body {
 
 input {
   border: 0;
+  outline: 0;
+  border-radius: 0;
   outline: 0;
   background-color: transparent;
   border-bottom: 2px solid #9a5cd9;
@@ -461,7 +467,7 @@ select:active {
   text-transform: uppercase;
   letter-spacing: 0.25em;
   font-size: 3em;
-  margin: 3em 0 -0.5em 0;
+  margin: 9rem 0 -1.5rem 0;
   color: #9A5CD9;
   height: auto;
   display: block;
@@ -633,7 +639,7 @@ select:active {
   padding: 0.25em 0.5em;
   cursor: pointer;
   display: inline-block;
-  margin-top: 1em;
+  margin-top: 2em;
   transition: background-color 0.25s, color 0.25s;
   -webkit-transition: background-color 0.25s, color 0.25s;
 }
@@ -823,8 +829,21 @@ p {
     -webkit-transition: max-height 0.25s;
   }
 
+  .cool-hover::before {
+    display: none;
+  }
+
+  .header-fixed {
+    z-index: 10000;
+  }
+
+  #home-carousel-outer {
+    z-index: -1;
+  }
+
   #header-right.expanded {
     max-height: 24rem;
+    z-index: 1000000;
   }
 
   #header-right > .header-link {
@@ -837,6 +856,7 @@ p {
     width: 100%;
     margin: 0;
     padding: 0;
+    z-index: 1000;
     padding-right: 1em !important;
     background-color: #333;
     border-top: 1px solid #444;
@@ -993,6 +1013,30 @@ p {
     width: 100%;
     padding: 0;
     margin: 2em 0;
+  }
+  .info {
+    max-height: 60vh !important;
+  }
+  .info > h1 {
+    font-size: 6vw;
+  }
+  .section:not(.sauce-section) > p {
+    width: 95% !important;
+    text-align: left;
+  }
+  #content > h1 {
+    font-size: 7.5vw;
+  }
+
+  .input {
+    width: 15em;
+  }
+
+  #footer-logo, #footer-logo > img {
+    height: 7.5em;
+  }
+  #footer-links {
+    height: 10em;
   }
 }
 

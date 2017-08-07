@@ -108,5 +108,9 @@ $(document).ready(function() {
     $("#hamburger-outer, #header-right").removeClass("expanded");
   });
 
+  $(window).resize(function() {
+    $("#hamburger-outer, #header-right").removeClass("expanded");
+  });
+
   //TODO: clicking outside of expanded hamburger menu closes it
 });
