@@ -42,9 +42,8 @@
       </div>
     </div>
     <div id="content">
-      <div class="section">
-        <p style="text-align: center">Contact us for hot suace orders, questions, or anything else! We will typically respond within 3-5 business days.</p>
-      </div>
+      <p style="text-align: center">Contact us for hot suace orders, questions, or anything else! We will typically respond within 3-5 business days.</p>
+      <p style="text-align: center">To learn more about our hot sauces, <a href="sauces.html">click here</a>.</p>
       <form id="contact-upper">
         <h3>EMAIL TYPE</h3>
         <select name="email-type">
@@ -85,13 +84,13 @@
               <textarea name="order-body" style="margin-top: 2em" placeholder="Add any additional instructions or questions here."></textarea>
             </div>
           </div>
-          <div id="general-outer" class="form-lower hidden">
+          <div id="general-outer" class="form-lower hidden invisible">
             <h3>SUBJECT</h3>
             <input type="text" name="subject"></input>
             <h3>CONTENT</h3>
             <textarea name="body" placeholder="Type your email here..."></textarea>
           </div>
-          <div id="question-outer" class="form-lower hidden">
+          <div id="question-outer" class="form-lower hidden invisible">
             <h3>SUBJECT</h3>
             <input type="text" name="subject"></input>
             <h3>CONTENT</h3>
@@ -103,7 +102,7 @@
         <button id="email-submit">SEND</button>
       </form>
     </div>
-    <div id="footer" style="margin-top: 20em">
+    <div id="footer" class="contact-footer">
       <a id="footer-logo" href="index.html">
         <img src="logo-white.png" />
       </a>

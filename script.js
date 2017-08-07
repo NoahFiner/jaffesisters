@@ -1,4 +1,4 @@
-var changeTimeout, changeInterval, emailChangeTimeout;
+var changeTimeout, changeInterval, emailChangeTimeout, emailChangeTimeout2;
 var currentSlide = 0;
 var currentEmail = "order";
 
@@ -58,6 +58,16 @@ var nextSlide = function() {
 
 changeInterval = setInterval(nextSlide, 10000);
 
+if(window.location.hash) {
+  //hash should be order-1, with the 1 corresponding to the value to set the order flavor to
+  //TODO: when a hash works, automatically scroll down to the email message
+  var hash = window.location.hash.substr(1);
+  if(parseInt(hash.split("-")[1])) {
+    console.log('test');
+    $("select[name='order-flavor'] option[value="+hash.split("-")[1]+"]").attr('selected', 'selected');
+  }
+}
+
 $(document).ready(function() {
   for(var i = 0; i < slides.length; i++) {
     slides[i].init();
@@ -65,13 +75,14 @@ $(document).ready(function() {
   setTimeout(function() {slides[0].activate(); $(".loading").fadeOut(500)}, 250);
 
   //set constant dimensions to contact-right to avoid weird animations
-
+  // $("#contact-right, .form-lower").css("width", $("#contact-right").width()+"px");
   $("#contact-right").css("height", $("#contact-right").height()+"px");
-  $("#contact-right, .form-lower").css("width", $("#contact-right").width()+"px");
+
   if(window.location.hash) {
     //hash should be order-1, with the 1 corresponding to the value to set the order flavor to
     var hash = window.location.hash.substr(1);
     if(parseInt(hash.split("-")[1])) {
+      console.log('test');
       $("select[name='order-flavor'] option[value="+hash.split("-")[1]+"]").attr('selected', 'selected');
     }
   }
@@ -79,8 +90,12 @@ $(document).ready(function() {
   $("select[name='email-type']").change(function() {
     clearTimeout(emailChangeTimeout);
     currentEmail = $(this).val();
-    $(".form-lower").addClass("hidden");
+    $(".form-lower").addClass("invisible");
+    emailChangeTimeout2 = setTimeout(function() {
+      $(".form-lower").addClass("hidden");
+    }, 250);
     emailChangeTimeout = setTimeout(function() {
+      $("#"+currentEmail+"-outer").removeClass("invisible");
       $("#"+currentEmail+"-outer").removeClass("hidden");
     }, 500);
   });

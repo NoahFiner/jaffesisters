@@ -283,7 +283,7 @@ body {
 }
 
 #contact-upper > div:not(.fancy-hr) {
-  width: 49.5%;
+  width: 47%;
   display: inline-block;
   margin-top: -3em;
   vertical-align: top;
@@ -302,6 +302,10 @@ body {
   display: block;
   width: 100%;
   color: #9a5cd9;
+}
+
+#footer.contact-footer {
+  margin-top: 25em;
 }
 
 input {
@@ -376,19 +380,22 @@ select:active {
 }
 
 .form-lower {
-  position: relative;
   height: auto;
   width: 100%;
   opacity: 1;
+  position: relative;
+  transition: opacity 0.25s;
+  -webkit-transition: opacity 0.25s;
+}
+
+.form-lower.invisible {
+  opacity: 0;
   transition: opacity 0.25s;
   -webkit-transition: opacity 0.25s;
 }
 
 .form-lower.hidden {
   position: absolute;
-  opacity: 0;
-  transition: opacity 0.25s;
-  -webkit-transition: opacity 0.25s;
 }
 
 #order-info {
@@ -416,21 +423,21 @@ select:active {
   font-size: 1.5em;
   margin: 1em 0;
   padding: 0.25em 0.5em;
-  background-color: #9a5cd9;
-  color: #333;
-  outline: 0;
-  border: 0;
+  border: 1px solid #9a5cd9;
+  background-color: transparent;
+  color: #9a5cd9;
   position: relative;
   display: block;
   width: auto;
   height: auto;
   cursor: pointer;
-  transition: color 0.25s;
-  -webkit-transition: color 0.25s;
+  transition: color 0.25s, background-color 0.25s;
+  -webkit-transition: color 0.25s, background-color 0.25s;
 }
 
 #email-submit:hover {
   color: #fff;
+  background-color: #9a5cd9;
 }
 
 #content {
@@ -440,6 +447,11 @@ select:active {
   margin-left: 10%;
   position: relative;
   display: block;
+}
+
+#content > p > a {
+  color: inherit;
+  text-decoration: underline;
 }
 
 #content > h1 {
@@ -471,7 +483,8 @@ select:active {
 
 .section > p {
   width: 60%;
-  font-size: 1.3em;
+  font-size: 1.2em;
+  line-height: 1.4;
 }
 
 .align-right {
@@ -479,8 +492,9 @@ select:active {
 }
 
 .sauce-section {
-  height: 80vh;
-  background-color: rgb(67, 42, 75);
+  height: auto;
+  margin-bottom: 3rem;
+  /*background-color: rgb(67, 42, 75);*/
 }
 
 .sauce {
@@ -489,7 +503,7 @@ select:active {
   position: relative;
   margin: 3em;
   margin-bottom: 0;
-  height: 80%;
+  height: 70vh;
   width: 30%;
 }
 
@@ -498,24 +512,106 @@ select:active {
   width: auto;
 }
 
-.sauce-info {
-  margin: 8em 4em 0 4em;
-  align-self: flex-start;
+.status-button {
+  position: absolute;
+  bottom: 2.5%;
+  right: -10%;
+  height: 6rem;
+  width: 6rem;
+  line-height: 6rem;
+  transform: rotate(-30deg);
+  -webkit-transform: rotate(-30deg);
+  border-radius: 10em;
+  box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
-.sauce-info > h2 {
-  text-decoration: none;
+.status-button.instock {
+  background-color: rgb(57, 167, 65);
+}
+.status-button.instock > p {
+  margin-top: 0.875em;
+}
+.status-button.soldout {
+  background-color: rgb(164, 53, 24);
+}
+.status-button.soldout > p {
+  margin-top: 1.125em;
+}
+
+.order-button.soldout {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.status-button > p {
+  text-transform: uppercase;
+  font-family: "Montserrat", "Roboto", helvetica, Arial, sans-serif;
+  font-weight: 800;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 1;
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.sauce-info {
+  margin: 4em 4em 0 4em;
+  align-self: flex-start;
+  position: relative;
+  height: auto;
+}
+
+.sauce-info.right, .sauce-info.right > h1, .sauce-info.right > h2, .sauce-info.right > h3, .sauce-info.right > h4, .sauce-info.right > p {
+  text-align: right;
+}
+
+.sauce-info.right > h4 {
+  right: 0;
+}
+
+.sauce-info > h4 {
   font-family: "Montserrat", "Roboto", helvetica, Arial, sans-serif;
   font-weight: 200;
   text-transform: uppercase;
   letter-spacing: 0.25em;
-  font-size: 2em;
+  font-size: 1.75em;
+  margin-top: 2rem;
+  height: auto;
+  opacity: 0.75;
+  color: #fff;
+}
+
+.sauce-info > h2 {
+  font-family: "Montserrat", "Roboto", helvetica, Arial, sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 3em;
+  height: auto;
+  color: #9a5cd9;
+  text-align: left;
+}
+
+.sauce-info > h2 + h3 {
+  margin-top: 0;
+}
+
+.sauce-info > h3 {
+  margin-top: 1em;
+  font-family: "Montserrat", "Roboto", helvetica, Arial, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 1em;
   height: auto;
   color: #fff;
+  opacity: 0.5;
   text-align: left;
 }
 
 .sauce-info > p {
+  margin-top: 1.5em;
+  font-size: 1.5em;
   display: block;
   color: #fff;
   width: auto;
@@ -526,7 +622,8 @@ select:active {
   height: auto;
   width: auto;
   color: #9a5cd9;
-  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #9a5cd9;
+  background-color: transparent;
   text-decoration: none;
   font-family: "Montserrat", "Roboto", helvetica, Arial, sans-serif;
   font-weight: 200;
@@ -536,13 +633,13 @@ select:active {
   padding: 0.25em 0.5em;
   cursor: pointer;
   display: inline-block;
-  margin: 4em 2em 2em 2em;
-  transition: background-color 0.25s;
-  -webkit-transition: background-color 0.25s;
+  margin-top: 1em;
+  transition: background-color 0.25s, color 0.25s;
+  -webkit-transition: background-color 0.25s, color 0.25s;
 }
-
 .sauce-info > a:hover {
-  background-color: #fff;
+  background-color: #9a5cd9;
+  color: #fff;
 }
 
 .content-img {
@@ -818,6 +915,9 @@ p {
   .section {
     flex-wrap: wrap;
   }
+  .sauce-section {
+    flex-wrap: nowrap;
+  }
   .section:not(.sauce-section) > * {
     width: 100%;
   }
@@ -834,6 +934,65 @@ p {
   .content-img > img {
     height: 15em;
     width: auto;
+  }
+
+  .sauce-section {
+    height: auto;
+  }
+  .sauce {
+    padding: 0;
+    margin: 0;
+    order: -1;
+    width: 6rem;
+    height: 100%;
+    align-self: flex-start;
+  }
+  .status-button {
+    top: 5rem;
+  }
+  .sauce > img {
+    height: 0;
+    display: none;
+  }
+  .sauce-info {
+    height: auto;
+  }
+  .sauce-info > h4 {
+    position: relative;
+    bottom: 0;
+    top: 0.5em;
+  }
+  .sauce-info > h4 + h3 {
+    position: relative;
+    bottom: 0;
+  }
+  .sauce-info.right, .sauce-info.right > h1, .sauce-info.right > h2, .sauce-info.right > h3, .sauce-info.right > h4, .sauce-info.right > p {
+    text-align: left;
+  }
+
+  .sauce-info.right > h4 {
+    left: 0;
+  }
+
+  #contact-left, #contact-right {
+    width: 100% !important;
+    margin-bottom: 2em;
+  }
+  #footer.contact-footer {
+    margin-top: 40em;
+  }
+}
+@media screen and (max-width: 750px) {
+  .status-button {
+    display: none;
+  }
+  .sauce {
+    display: none;
+  }
+  .sauce-info {
+    width: 100%;
+    padding: 0;
+    margin: 2em 0;
   }
 }
 
