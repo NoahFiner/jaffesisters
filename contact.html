@@ -44,12 +44,12 @@
     <div id="content">
       <p style="text-align: center">Contact us for hot suace orders, questions, or anything else! We will typically respond within 3-5 business days.</p>
       <p style="text-align: center">To learn more about our hot sauces, <a href="sauces.html">click here</a>.</p>
+      <p style="text-align: center">If this form doesn't work, you can email us at <a href="mailto:tuitionhotsauce@gmail.com">tuitionhotsauce@gmail.com</a>.</p>
       <form id="contact-upper">
         <h3>EMAIL TYPE</h3>
         <select name="email-type">
           <option value="order">Order</option>
-          <option value="general">General inquiry</option>
-          <option value="question">Question</option>
+          <option value="general">General inquiry/question</option>
         </select>
         <br>
         <div class="fancy-hr">
@@ -90,16 +90,10 @@
             <h3>CONTENT</h3>
             <textarea name="body" placeholder="Type your email here..."></textarea>
           </div>
-          <div id="question-outer" class="form-lower hidden invisible">
-            <h3>SUBJECT</h3>
-            <input type="text" name="subject"></input>
-            <h3>CONTENT</h3>
-            <textarea name="body" placeholder="Type your email here..."></textarea>
-          </div>
         </div>
         <br>
         <p style="margin-top: 3em">Make sure that all information is correct before sending. If your email address is inaccurate, you will not receive a response.</p>
-        <button id="email-submit">SEND</button>
+        <a id="email-submit" href="#" onclick="alert('Email to tuitionhotsauce@gmail.com was generated. Look this over and send it once you are ready.')">SEND</a>
       </form>
     </div>
     <div id="footer" class="contact-footer">

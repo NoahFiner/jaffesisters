@@ -434,7 +434,8 @@ select:active {
   background-color: transparent;
   color: #9a5cd9;
   position: relative;
-  display: block;
+  display: table;
+  text-decoration: none;
   width: auto;
   height: auto;
   cursor: pointer;
