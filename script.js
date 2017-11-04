@@ -44,9 +44,9 @@ var Slide = function(num, img, title, text, link) {
 
 var slides = [
   new Slide(0, 'img/4.jpg', 'A SAUCY SELECTION', 'We make high-quality, local, and fresh hot sauce in a variety of spicy flavors!.', 'sauces.html'),
-  new Slide(1, 'img/3.jpg', 'PERFECT PARTNERS', 'As sisters and best friends, the owners of Tuition Hot Sauce make the ultimate business companions.', 'about.html#about-header'),
-  new Slide(2, 'img/1.jpg', 'BACKYARD INGREDIENTS', 'Literally! All peppers in hot sauces are grown in our backyard. You can\'t get fresher than that!', 'about.html#ingredients-header'),
-  new Slide(3, 'img/2-cropped.jpg', 'EARNING FOR EDUCATION', 'All earnings from selling our hot sauce goes towards our college savings.', 'about.html#education-header'),
+  new Slide(1, 'img/about-us.jpg', 'PERFECT PARTNERS', 'As sisters and best friends, the owners of Tuition Hot Sauce make the ultimate business companions.', 'about.html#about-header'),
+  new Slide(2, 'img/ingredients.jpg', 'BACKYARD INGREDIENTS', 'Literally! All peppers in hot sauces are grown in our backyard. You can\'t get fresher than that!', 'about.html#ingredients-header'),
+  new Slide(3, 'img/homemade.jpg', 'EARNING FOR EDUCATION', 'All earnings from selling our hot sauce goes towards our college savings.', 'about.html#education-header'),
   new Slide(4, 'img/5.jpg', 'A HOMEMADE BUSINESS', 'The hot sauce flavors, bottles, and labels are all designed and original to our business.', 'about.html#business-header')
 ];
 
