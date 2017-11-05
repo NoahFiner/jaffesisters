@@ -45,7 +45,7 @@ var Slide = function(num, img, title, text, link) {
 var slides = [
   new Slide(0, 'img/saucy-select.jpg', 'A SAUCY SELECTION', 'We make high-quality, local, and fresh hot sauce in a variety of spicy flavors!.', 'sauces.html'),
   new Slide(1, 'img/about-us.jpg', 'PERFECT PARTNERS', 'As sisters and best friends, the owners of Tuition Hot Sauce make the ultimate business companions.', 'about.html#about-header'),
-  new Slide(2, 'img/ingredients.jpg', 'BACKYARD INGREDIENTS', 'Literally! All peppers in hot sauces are grown in our backyard. You can\'t get fresher than that!', 'about.html#ingredients-header'),
+  new Slide(2, 'img/freshingredients.jpg', 'BACKYARD INGREDIENTS', 'Literally! All peppers in hot sauces are grown in our backyard. You can\'t get fresher than that!', 'about.html#ingredients-header'),
   new Slide(3, 'img/homemade.jpg', 'EARNING FOR EDUCATION', 'All earnings from selling our hot sauce goes towards our college savings.', 'about.html#education-header'),
   new Slide(4, 'img/5.jpg', 'A HOMEMADE BUSINESS', 'The hot sauce flavors, bottles, and labels are all designed and original to our business.', 'about.html#business-header')
 ];
@@ -58,7 +58,7 @@ var nextSlide = function() {
   slides[currentSlide].activate();
 }
 
-changeInterval = setInterval(nextSlide, 10000);
+changeInterval = setInterval(nextSlide, 5000);
 
 if(window.location.hash) {
   //hash should be order-1, with the 1 corresponding to the value to set the order flavor to
