@@ -223,6 +223,35 @@ body {
   pointer-events: none;
 }
 
+.social-button {
+  height: 2.5rem;
+  width: 2.5rem;
+  position: absolute;
+  bottom: 2em;
+  right: 2em;
+  background-size: 80% 80%;
+  background-position: center center;
+  border-radius: 2px;
+  background-repeat: no-repeat;
+  z-index: 398475;
+  background-color: transparent;
+  transition: background-color 0.25s;
+  -webkit-transition: background-color 0.25s;
+}
+
+.social-button:hover {
+  background-color: rgba(154, 92, 217, 0.2);
+}
+
+.instagram {
+  background-image: url("img/instagram.png");
+  right: 5em;
+}
+
+.facebook {
+  background-image: url("img/facebook.png");
+}
+
 .info {
   pointer-events: auto;
   background-color: #9a5cd9;
@@ -1063,6 +1092,10 @@ p {
 
 @media screen and (max-width: 500px) {
   .info {
-    width: 80vw;
+    width: 70vw;
+  }
+  .instagram {
+    bottom: 5em;
+    right: 2em !important;
   }
 }
