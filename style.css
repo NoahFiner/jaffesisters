@@ -231,7 +231,7 @@ body {
   right: 2em;
   background-size: 80% 80%;
   background-position: center center;
-  border-radius: 2px;
+  border-radius: 4px;
   background-repeat: no-repeat;
   z-index: 398475;
   background-color: transparent;
@@ -240,7 +240,7 @@ body {
 }
 
 .social-button:hover {
-  background-color: rgba(154, 92, 217, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .instagram {
